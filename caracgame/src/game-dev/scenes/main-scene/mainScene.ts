@@ -3,6 +3,7 @@ import { mainMenuComponents, mainMenuButtons, gameAssistantComponents, buttonIco
 import { MainMenu } from 'src/game-dev/objects/components/main-menu/main-menu';
 import { AssistantMenu } from 'src/game-dev/objects/components/game-assistant/assistantMenu';
 import { AssistantMenuButton } from 'src/game-dev/objects/components/game-assistant/menuButton';
+import { GameAssistantWindow } from 'src/game-dev/objects/components/game-assistant/gameAssistantWindow';
 
 export class MainScene extends Phaser.Scene{
     
@@ -29,7 +30,7 @@ export class MainScene extends Phaser.Scene{
     }
 
     private create():void{
-        let menu = new MainMenu(this,this.sys.canvas.width/3,this.sys.canvas.height/3);
-        let assistantMenu = new AssistantMenu(this,300,500);
+        let menu = new MainMenu(this,this.sys.canvas.width/7,this.sys.canvas.height*2/3+100);
+        let gameAssistantWindow = new GameAssistantWindow(this,this.sys.canvas.width/7,this.sys.canvas.height/3);
     }
 }
