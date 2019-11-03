@@ -6,6 +6,7 @@ export class GameAssistantWindow {
     scene: Phaser.Scene;
     window: Phaser.GameObjects.Image;
     label: Phaser.GameObjects.Image;
+    
     assistantMenu: AssistantMenu;
 
     container: Phaser.GameObjects.Container;

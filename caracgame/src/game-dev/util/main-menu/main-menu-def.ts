@@ -63,3 +63,16 @@ export const buttonIcons = [
     {id:5,title:'SONIDO',key:'icon-sound',url:'assets/game-assets/game-assistant-components/icons/icon-sound.png'},
     {id:6,title:'OMITIR',key:'icon-omit',url:'assets/game-assets/game-assistant-components/icons/icon-omit.png'}
 ]
+
+export const sceneComponents = [
+    {
+        name:'window',
+        key:'scene-window',
+        url:'assets/game-assets/base-scene-components/scene-window.png'
+    },
+    {
+        name:'label',
+        key:'scene-Label',
+        url:'assets/game-assets/base-scene-components/scene-label.png'
+    }
+]
