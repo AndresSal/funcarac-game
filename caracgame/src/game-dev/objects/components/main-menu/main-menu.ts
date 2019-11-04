@@ -27,6 +27,5 @@ export class MainMenu {
         //building the component
         this.container = this.scene.add.container(x,y,[this.window,this.caracButton.container,this.talesButton.container,this.chakraButton.container]);
         this.container.setSize(this.window.width,this.window.height);
-        this.container.setScale(0.6);
     }
 }

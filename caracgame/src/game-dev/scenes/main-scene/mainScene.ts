@@ -7,8 +7,8 @@ import { GameAssistantWindow } from 'src/game-dev/objects/components/game-assist
 import { BaseGameScene } from '../base-game-scene/BaseGameScene';
 
 export class MainScene extends Phaser.Scene{
-    gameWidth:number;
-    gameHeight:number;
+    sceneWidth:number;
+    sceneHeight:number;
     uiElements:Phaser.GameObjects.Group;
 
     currentScene:Phaser.Scene;
@@ -35,23 +35,19 @@ export class MainScene extends Phaser.Scene{
         });
     }
 
+    private init():void{
+        this.sceneWidth = this.sys.canvas.width;
+        this.sceneHeight = this.sys.canvas.height;
+    }
+
+
     private create():void{
-        this.gameWidth = this.game.canvas.width;
-        this.gameHeight = this.game.canvas.height;
-
-        let menu = new MainMenu(this,0,0);
-        let gameAssistantWindow = new GameAssistantWindow(this,0,0);
-
-        this.uiElements = this.add.group([gameAssistantWindow.container,menu.container]);
-        Phaser.Actions.GridAlign(this.uiElements.getChildren(),{
-            width:-1,
-            height:this.gameHeight,
-            cellWidth: menu.container.width,
-            cellHeight: menu.container.height+143,
-            x:this.gameWidth/2-this.gameWidth/4-3,
-            y:111
-        });
-        
+        let assistantWindow = new GameAssistantWindow(this,this.sceneWidth/3-this.sceneWidth/6,this.sceneHeight/3+2.5);
+        let mainMenu = new MainMenu(this,this.sceneWidth/3-this.sceneWidth/6,this.sceneHeight-this.sceneHeight/6-2.55);
+        let scaleRatio = window.devicePixelRatio;
+        assistantWindow.container.setScale(scaleRatio*0.6);
+        mainMenu.container.setScale(scaleRatio*0.6);
+                
         this.scene.launch('CaracScene');
     }
 }

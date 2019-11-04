@@ -27,7 +27,6 @@ export class GameAssistantWindow {
 
         this.container = this.scene.add.container(x,y,[this.window,this.label,this.assistantMenu.container]);
         this.container.setSize(this.window.width,this.window.height);
-        this.container.setScale(0.6);
 
     }
 }

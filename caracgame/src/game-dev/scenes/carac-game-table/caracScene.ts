@@ -12,6 +12,8 @@ export class CaracScene extends BaseGameScene{
 
     create():void{
         this.addUIElements();
-        let recuadro = this.add.image(300,400,'recuadro');
+        let recuadro = this.add.image(0,100,'recuadro');
+        this.container.add(recuadro);
+
     }
 }
