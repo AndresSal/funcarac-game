@@ -4,6 +4,7 @@ import { PuzzleSlot } from './puzzleSlot';
 export class BoardGame extends Phaser.GameObjects.Container{
     scene:Phaser.Scene;
     board:Phaser.GameObjects.Image;
+    label:Phaser.GameObjects.Image;
 
     redRing:PuzzleSlot[];
     yellowRing:PuzzleSlot[];
@@ -14,13 +15,14 @@ export class BoardGame extends Phaser.GameObjects.Container{
         super(scene,x,y);
 
         this.board = this.scene.add.image(0,0,caracGameComponents.board_game.key);
-        this.add(this.board);
+        this.label = this.scene.add.image(0,-305,caracGameComponents.board_game.label.key);
+        this.add([this.board,this.label]);
         this.setSize(this.board.width,this.board.height);
 
-        this.redRing = this.createSlotRing(0,0,1);
-        this.yellowRing = this.createSlotRing(0,0,2);
-        this.greenRing = this.createSlotRing(0,0,3);
-        this.blueRing = this.createSlotRing(0,0,4);
+        this.redRing = this.createSlotRing(0,48,1);
+        this.yellowRing = this.createSlotRing(0,48,2);
+        this.greenRing = this.createSlotRing(0,48,3);
+        this.blueRing = this.createSlotRing(0,48,4);
 
     }
 

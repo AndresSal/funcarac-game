@@ -3,6 +3,7 @@ import { PuzzlePiece } from 'src/game-dev/objects/components/carac-game-componen
 import { caracGameComponents } from 'src/game-dev/consts/carac-game-config/carac-game-config';
 import { PuzzleSlot } from 'src/game-dev/objects/components/carac-game-components/puzzleSlot';
 import { BoardGame } from 'src/game-dev/objects/components/carac-game-components/boardGame';
+import { PiecesBoard } from 'src/game-dev/objects/components/carac-game-components/piecesboard';
 
 export class CaracScene extends BaseGameScene{
     redRing:PuzzleSlot[];
@@ -22,8 +23,13 @@ export class CaracScene extends BaseGameScene{
     create():void{
         this.addUIElements();
 
-        // let puzzleTest = new PuzzlePiece(this,0,100,1);
-        // this.container.add(puzzleTest);
+        let piecesBoard = new PiecesBoard(this,-400,100);
+        this.container.add(piecesBoard);
+
+        let piece01 = new PuzzlePiece(this,0,-150,1);
+        let piece02 = new PuzzlePiece(this,0,30,2);
+        let piece03 = new PuzzlePiece(this,0,210,3);
+        piecesBoard.add([piece01,piece02,piece03]);
 
         let gameBoard = new BoardGame(this,200,100);
         this.container.add(gameBoard);
@@ -41,6 +47,9 @@ export class CaracScene extends BaseGameScene{
         this.load.image(caracGameComponents.photo.key,caracGameComponents.photo.url);
         this.load.image(caracGameComponents.slot.board.key,caracGameComponents.slot.board.url);
         this.load.image(caracGameComponents.board_game.key,caracGameComponents.board_game.url);
+        this.load.image(caracGameComponents.pieces_board.key,caracGameComponents.pieces_board.url);
+        this.load.image(caracGameComponents.pieces_board.label.key,caracGameComponents.pieces_board.label.url);
+        this.load.image(caracGameComponents.board_game.label.key,caracGameComponents.board_game.label.url);
 
         //loading the backgrounds
         caracGameComponents.slot.background.forEach((obj)=>{

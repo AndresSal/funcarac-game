@@ -39,7 +39,22 @@ export const caracGameComponents =
     //board game
     board_game:{
         key:'board-game',
-        url:'assets/game-assets/carac-components/board/carac-board.png'
+        url:'assets/game-assets/carac-components/board/carac-board.png',
+        label:{
+            key:'carac-label',
+            url:'assets/game-assets/carac-components/board/carac-label.png'
+        }
+    },
+
+    
+    //pieces board
+    pieces_board:{
+        key:'pieces-board',
+        url:'assets/game-assets/carac-components/board/pieces-board.png',
+        label:{
+            key:'board-label',
+            url:'assets/game-assets/carac-components/board/piece-board-label.png'
+        }
     },
 
     slot:{
